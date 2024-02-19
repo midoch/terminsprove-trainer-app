@@ -1,10 +1,10 @@
 import "./App.css";
-import HomePage from "./pages/HomePage";
+import WelcomePage from "./pages/WelcomePage";
 
 function App() {
   return (
     <main className="min-h-screen">
-      <HomePage />
+      <WelcomePage />
     </main>
   );
 }
