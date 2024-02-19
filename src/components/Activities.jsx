@@ -1,7 +1,7 @@
 import React from "react";
 
-const Activitys = () => {
-  return <div>Activitys</div>;
+const Activities = () => {
+  return <div>Activities</div>;
 };
 
-export default Activitys;
+export default Activities;
