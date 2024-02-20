@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import BurgerMenu from "../components/BurgerMenu";
 import { useState, useEffect } from "react";
 import Loading from "../components/Loading";
 import ErrorPage from "../pages/ErrorPage";
