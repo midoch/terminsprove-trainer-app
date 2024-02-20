@@ -3,6 +3,7 @@ import BurgerMenu from "../components/BurgerMenu";
 import { useState, useEffect } from "react";
 import Loading from "../components/Loading";
 import ErrorPage from "../pages/ErrorPage";
+import Navigation from "../components/Navigation";
 
 const HomePage = () => {
   const [activities, setActivities] = useState([]);
@@ -41,7 +42,7 @@ const HomePage = () => {
 
   return (
     <div className="flex flex-col p-4">
-      <BurgerMenu />
+      <Navigation />
       <div className="flex justify-between p-2 my-6">
         <h1 className="text-2xl font-semibold">Popular Classes</h1>
       </div>
