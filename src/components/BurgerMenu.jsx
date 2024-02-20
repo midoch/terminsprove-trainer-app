@@ -1,7 +1,7 @@
 import { slide as Menu } from "react-burger-menu";
-import { Link } from "react-router-dom";
 import { useState } from "react";
 import { X, AlignRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const BurgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +17,7 @@ const BurgerMenu = () => {
   return (
     <div className="relative">
       <div
-        className="absolute top-0 right-0 p-4 cursor-pointer z-50"
+        className="fixed top-0 right-0 p-4 cursor-pointer z-50"
         onClick={toggleMenu}
       >
         {isOpen ? <X size={32} /> : <AlignRight size={32} />}
@@ -26,17 +26,18 @@ const BurgerMenu = () => {
         isOpen={isOpen}
         onStateChange={(state) => setIsOpen(state.isOpen)}
         styles={{
+          bmBurgerBar: { display: "block" },
           bmCrossButton: {
             display: "block",
-            color: "black",
-            height: "32px",
-            width: "32px",
           },
           bmMenuWrap: {
             position: "fixed",
             width: "100%",
             height: "100%",
             top: 0,
+            left: isOpen ? 0 : "-100%",
+            transition: "left 0.3s ease",
+            zIndex: 1000,
           },
           bmMenu: {
             background: "white",
@@ -49,34 +50,37 @@ const BurgerMenu = () => {
             alignItems: "center",
           },
           bmItem: {
-            marginBottom: "1rem",
-            marginTop: "2rem",
+            marginBottom: "2rem",
           },
           bmOverlay: {
             background: "rgba(0, 0, 0, 0.3)",
+            zIndex: 100,
           },
         }}
       >
-        {menuLinks.map((link) => (
-          <Link
-            key={link.to}
-            to={link.to}
-            onClick={closeMenu}
-            className="block py-2 text-black"
-          >
-            {link.label}
-          </Link>
-        ))}
+        <Link to="/home" onClick={closeMenu} className="block py-2 text-black">
+          Home
+        </Link>
+        <Link
+          to="/search"
+          onClick={closeMenu}
+          className="block py-2 text-black"
+        >
+          Search
+        </Link>
+        <Link
+          to="/schedule"
+          onClick={closeMenu}
+          className="block py-2 text-black"
+        >
+          My Schedule
+        </Link>
+        <Link to="/login" onClick={closeMenu} className="block py-2 text-black">
+          Log in
+        </Link>
       </Menu>
     </div>
   );
 };
-
-const menuLinks = [
-  { to: "/home", label: "Home" },
-  { to: "/search", label: "Search" },
-  { to: "/schedule", label: "My Schedule" },
-  { to: "/login", label: "Log in" },
-];
 
 export default BurgerMenu;
