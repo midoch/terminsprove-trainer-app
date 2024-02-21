@@ -1,10 +1,11 @@
 import { slide as Menu } from "react-burger-menu";
 import { useState } from "react";
 import { X, AlignRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const BurgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -12,6 +13,13 @@ const BurgerMenu = () => {
 
   const closeMenu = () => {
     setIsOpen(false);
+  };
+
+  const isLoggedIn = !!localStorage.getItem("token");
+
+  const handleLogout = () => {
+    localStorage.removeItem("token"); // Remove token from local storage
+    navigate("/login"); // Redirect to login page
   };
 
   return (
@@ -75,9 +83,19 @@ const BurgerMenu = () => {
         >
           My Schedule
         </Link>
-        <Link to="/login" onClick={closeMenu} className="block py-2 text-black">
-          Log in
-        </Link>
+        {isLoggedIn ? (
+          <button onClick={handleLogout} className="block py-2 text-black">
+            Log out
+          </button>
+        ) : (
+          <Link
+            to="/login"
+            onClick={closeMenu}
+            className="block py-2 text-black"
+          >
+            Log in
+          </Link>
+        )}
       </Menu>
     </div>
   );
