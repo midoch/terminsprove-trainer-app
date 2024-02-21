@@ -8,6 +8,7 @@ import HomePage from "./pages/HomePage.jsx";
 import SearchPage from "./pages/SearchPage.jsx";
 import SchedulePage from "./pages/SchedulePage.jsx";
 import Login from "./components/Login.jsx";
+import ClassDetails from "./pages/ClassDetails.jsx";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
   {
     path: "/schedule",
     element: <SchedulePage />,
+  },
+  {
+    path: "/ClassDetails",
+    element: <ClassDetails />,
   },
   {
     path: "*",
