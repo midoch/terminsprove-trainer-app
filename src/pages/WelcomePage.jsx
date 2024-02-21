@@ -27,7 +27,7 @@ const Home = () => {
           alt="Welcome Center"
         />
         <Link
-          to="/Login"
+          to="/home"
           className="absolute bottom-12 left-24 bg-[#F1C40E] text-black font-semibold py-4 px-8 rounded-3xl"
         >
           START TRAINING
