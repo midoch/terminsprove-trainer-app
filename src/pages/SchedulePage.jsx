@@ -16,21 +16,33 @@ const SchedulePage = () => {
           classes: [
             {
               id: 1,
-              className: "Class A",
+              className: "Yoga Flow Workout",
               classDay: "Monday",
               classTime: "10:00 AM",
             },
             {
               id: 2,
-              className: "Class B",
+              className: "Lower Abs Workout",
               classDay: "Wednesday",
               classTime: "2:00 PM",
             },
             {
               id: 3,
-              className: "Class C",
+              className: "Hip Workout",
               classDay: "Friday",
               classTime: "4:00 PM",
+            },
+            {
+              id: 4,
+              className: "Full Body Workout",
+              classDay: "Saturday",
+              classTime: "9:00 AM",
+            },
+            {
+              id: 5,
+              className: "Body Workout",
+              classDay: "Sunday",
+              classTime: "14:00 AM",
             },
           ],
         };
