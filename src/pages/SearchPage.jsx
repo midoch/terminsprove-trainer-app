@@ -59,11 +59,7 @@ const SearchPage = () => {
       <h2 className="text-xl font-bold mt-6">Popular Classes</h2>
       <div className="flex overflow-x-auto mt-2 mb-8 no-scrollbar">
         {activities.map((classItem) => (
-          <Link
-            key={classItem.id}
-            to={`/class/${classItem.id}`}
-            className="m-2 relative"
-          >
+          <Link key={classItem.id} to={`/search`} className="m-2 relative">
             <img
               src={classItem.asset.url}
               alt={classItem.className}
@@ -81,7 +77,7 @@ const SearchPage = () => {
         {popularTrainers.map((trainer) => (
           <Link
             key={trainer.id}
-            to={`/trainer/${trainer.id}`}
+            to={`/search`}
             className="m-2 flex items-center"
           >
             <img
