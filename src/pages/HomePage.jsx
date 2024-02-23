@@ -48,7 +48,7 @@ const HomePage = () => {
 
       <div className="relative mb-16 flex justify-center">
         {randomActivity && (
-          <Link to={`/home`}>
+          <Link to={`/classdetails`}>
             <img
               className="w-82 h-96 object-cover rounded-2xl"
               src={randomActivity.asset.url}
@@ -64,7 +64,7 @@ const HomePage = () => {
       <h2 className="text-xl font-bold">Classes for you</h2>
       <div className="flex no-scrollbar overflow-x-auto">
         {activities.map((activity) => (
-          <Link key={activity.id} to={`/home`} className="m-2 relative">
+          <Link key={activity.id} to={`/classdetails`} className="m-2 relative">
             <img
               src={activity.asset.url}
               alt={activity.className}

@@ -95,7 +95,11 @@ const SearchPage = () => {
       {/* Display filtered activities */}
       <div className="flex overflow-x-auto mt-2 mb-8 no-scrollbar">
         {filteredActivities.map((classItem) => (
-          <Link key={classItem.id} to={`/search`} className="m-2 relative">
+          <Link
+            key={classItem.id}
+            to={`/classdetails`}
+            className="m-2 relative"
+          >
             <img
               src={classItem.asset.url}
               alt={classItem.className}
